@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 //Activities schema
-var itemsSchema = mongoose.Schema({
+var ItemSchema = mongoose.Schema({
       name: {
         type:String,
         required: true
@@ -14,10 +14,9 @@ var itemsSchema = mongoose.Schema({
         type:Number,
         required: true
       }
-
 });
 
-var Item = module.exports = mongoose.model('Item', itemsSchema);
+var Item = module.exports = mongoose.model('Item', ItemSchema);
 
 //Gets all customers
 module.exports.getItems = function(callback, limit){

@@ -1,4 +1,3 @@
-
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -11,19 +10,27 @@ app.use(bodyParser.json());
 
 mongoose.connect(config.mongoUrl);
 
-Customer = require('./models/customer')
-
+Item = require('./models/item')
+Purchase = require('./models/purchase')
 
 //Gets all the customers
-app.get('/customers', function(req, res){
-  Customer.getCustomers(function(err, customer){
+app.get('/api/customer/items', function(req, res){
+  Item.getItems(function(err, item){
     if(err){
       throw err;
     }
-    res.json(customer);
+    res.json(item);
   });
 });
 
+app.get('/api/vendor/purchases', function(req, res){
+  Purchase.getPurchase(function(err, Purchase){
+    if(err){
+      throw err;
+    }
+    res.json(Purchase);
+  });
+})
 
 
 
