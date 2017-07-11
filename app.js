@@ -23,6 +23,7 @@ app.get('/api/customer/items', function(req, res){
   });
 });
 
+//Gets all the purchases
 app.get('/api/vendor/purchases', function(req, res){
   Purchase.getPurchase(function(err, Purchase){
     if(err){
@@ -32,12 +33,10 @@ app.get('/api/vendor/purchases', function(req, res){
   });
 })
 
-
-
+//Looking for port 27017
 if (require.main === module) {
     app.listen(27017, function () {
         console.log("Server running at http://localhost:27017")
     })
 }
-
 module.exports = app;

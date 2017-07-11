@@ -17,7 +17,6 @@ describe("GET /api/customer/items", function () {
   // })
 });
 
-
 describe("GET /api/vendor/purchases", function () {
   it("should return successfully", function (done) {
     request(app)
